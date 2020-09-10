@@ -1,0 +1,6 @@
+[submodule "notes-app"]
+	path = notes-app
+	url = https://github.com/aapan-m13/udemy-complete-node-js-course.git
+[submodule "web-server"]
+	path = web-server
+	url = https://github.com/aapan-m13/udemy-complete-node-js-course.git
