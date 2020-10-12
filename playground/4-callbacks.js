@@ -22,27 +22,54 @@
 //     console.log(data);
 // })
 
-// const add =(a,b,callback)=>{
+
+// const add =(a, b, callback)=>{
 //     setTimeout(()=>{
+//         console.log("after 2 secs!");
 //         callback(a+b);
 //     }, 2000);
 // }
 
-// add(1, 4, (sum) => {
-//     console.log(sum) // Should print: 5
+// add(1, 2, (sum)=>{
+//     console.log(sum);
+// });
+
+// const doWorkCallback = (callback)=>{
+//     setTimeout(()=>{
+//         // callback('this is my error!', undefined);
+//         callback(undefined, 'success!')
+//     }, 2000);
+// }
+
+// doWorkCallback((error, result)=>{
+//     if (error) {
+//         return console.log(error);
+//     }
+
+//     console.log(result);
 // })
 
-const doWorkCallback = (callback)=>{
-    setTimeout(()=>{
-        // callback('this is my error!', undefined);
-        callback(undefined, 'success!')
-    }, 2000);
-}
+// const array = [1,2,3];
 
-doWorkCallback((error, result)=>{
-    if (error) {
-        return console.log(error);
-    }
+// const sum = array.reduce((res, num)=>{
+//         return num+res;
+//     }, 0);
 
-    console.log(result);
-})
+// console.log(sum);
+
+const array = [
+    {id: 1, name:'john', age:23},
+    {id: 2, name:'Apon', age:21},
+    {id: 1, name:'john', age:23}
+]
+
+const unique = Object.values(
+    array.reduce((map, element)=>{
+        if(!map[element.id]){
+            map[element.id] = element;
+        }
+        return map;
+    }, {})
+);
+
+console.log(unique);

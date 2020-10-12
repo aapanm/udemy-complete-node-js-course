@@ -108,3 +108,58 @@
     }).catch((error)=>{
         console.log(error);
     });
+
+    //mongoose model creation and save
+
+    const me = new User({
+        name:' jen ',
+        email: ' HJSAKS@HSKHK.KJAS ',
+        password: "apapass123!!m"
+    })
+
+me.save().then(()=>{
+    console.log(me);
+}).catch((error)=>{
+    console.log('Error!', error);
+})
+
+const firstTask = new Tasks({
+    description: '   Eat lunch  ',
+})
+
+firstTask.save().then(()=>{
+    console.log(firstTask);
+}).catch((error)=>{
+    console.log(error);
+})
+
+//user 
+
+// router.get('/users/:userId', async (req, res)=>{
+    
+//     const _id = req.params.userId;
+
+//     console.log(_id);
+
+//     try{
+//         const user = await User.findById(_id);
+//         if(!user){
+//             return res.status(404).send();
+//         }
+//         res.send(user);
+//     }catch(e){
+//         res.status(500).send();
+//     }
+
+// })
+
+// router.get('/users', auth ,async (req, res)=>{
+
+//     try{
+//         const users = await User.find({});
+//         res.send(users);
+//     }catch(e){
+//         res.status(500).send();
+//     }
+
+// })
