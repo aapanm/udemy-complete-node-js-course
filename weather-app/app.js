@@ -20,12 +20,8 @@ yargs.command({
             if(code){
                 const {lat, lon, location} = geoResponse;
                 forecastData = forecast(lat, lon, (response, code)=>{
-                    if(code){
-                        console.log('location:'+location);
-                        console.log(response);
-                    }else{
-                        console.log(response);
-                    }
+                    if(code) console.log('location:'+location);
+                    console.log(response);
                 })
             }else{
                 console.log(geoResponse);
